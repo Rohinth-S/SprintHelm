@@ -1,0 +1,10 @@
+.git
+.gitignore
+.venv
+.venv-jira-tools
+__pycache__
+*.pyc
+.pytest_cache
+.hypothesis
+automation/output/*
+!automation/output/.gitkeep

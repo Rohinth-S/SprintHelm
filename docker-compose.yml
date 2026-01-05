@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  sprint-guardian:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./automation/output:/app/automation/output
+      - ./references:/app/references:ro
+    environment:
+      - JIRA_URL=${JIRA_URL:-}
+      - JIRA_EMAIL=${JIRA_EMAIL:-}
+      - JIRA_API_TOKEN=${JIRA_API_TOKEN:-}
+    command: ["--mode", "standup-brief", "--mock"]
