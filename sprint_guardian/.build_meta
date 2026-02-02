@@ -1,3 +1,3 @@
-build_step=19/65
-timestamp=2026-01-30T16:45:00
-commit=refactor(models): add helper properties for issue state checks
+build_step=20/65
+timestamp=2026-02-02T10:10:00
+commit=feat(modes): define BaseMode template and standardized output structure
