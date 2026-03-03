@@ -1,3 +1,3 @@
-build_step=40/65
-timestamp=2026-03-02T10:05:00
-commit=feat(mcp-server): implement native FastMCP server for IDE integration
+build_step=41/65
+timestamp=2026-03-03T14:40:00
+commit=feat(powershell): add cross-platform PowerShell scripts for Windows
