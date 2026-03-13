@@ -1,3 +1,3 @@
-build_step=48/65
-timestamp=2026-03-12T11:25:00
-commit=perf(scoring): optimize candidate skill vector matching algorithm
+build_step=49/65
+timestamp=2026-03-13T15:35:00
+commit=fix(modes): handle edge case with zero story points in velocity tally
