@@ -3,12 +3,12 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "codinzhub-sprint-guardian"
+name = "sprint-helm"
 version = "1.0.0"
 authors = [
   { name = "Rohinth S", email = "imt_2024068@iiitm.ac.in" }
 ]
-description = "AI-Powered Agile Sprint Orchestrator for Jira task triage, load balancing, and standups with Human-in-the-Loop guardrails."
+description = "SprintHelm - AI-Powered Agile Sprint Orchestrator for Jira task triage, load balancing, and standups with Human-in-the-Loop guardrails."
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [

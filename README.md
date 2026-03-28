@@ -1,4 +1,4 @@
-# 🛡️ CodinzHub Sprint Guardian
+# 🛡️ SprintHelm
 
 <div align="center">
 
@@ -20,11 +20,11 @@
 
 ## 🌟 Executive Overview
 
-**CodinzHub Sprint Guardian** is a developer-centric Agile automation system that bridges the gap between Large Language Models (LLMs) and project management platforms. Powered by the **Model Context Protocol (MCP)**, it acts as an intelligent co-pilot for Scrum Masters, Engineering Managers, and Forward Deployed Engineers (FDEs).
+**SprintHelm** is a developer-centric Agile automation system that bridges the gap between Large Language Models (LLMs) and project management platforms. Powered by the **Model Context Protocol (MCP)**, it acts as an intelligent co-pilot for Scrum Masters, Engineering Managers, and Forward Deployed Engineers (FDEs).
 
 The agent automatically inspects active Jira sprint health, balances developer workloads against strict Work-In-Progress (WIP) limits, predicts delivery bottlenecks before they escalate, and drafts team standup summaries—**all while keeping every state-mutating action behind a secure human approval gate.**
 
-By automating repetitive coordination tasks, Sprint Guardian reduces manual Jira overhead by **12+ hours per week per Scrum Master**, cuts sprint ticket rollover by **34%**, and ensures zero unintended production mutations.
+By automating repetitive coordination tasks, SprintHelm reduces manual Jira overhead by **12+ hours per week per Scrum Master**, cuts sprint ticket rollover by **34%**, and ensures zero unintended production mutations.
 
 ---
 
@@ -246,16 +246,16 @@ $$\text{Score}(c, i) = \sum_{k=1}^{5} w_k \cdot \mathbf{1}_{\{P_k(c, i)\}} - \su
 | :---: | :--- | :--- |
 | **-5** | Not on Assignment Allowlist | **Hard Blocker**: Reject mutation |
 | **-4** | Unavailable in Sprint Window | **Hard Blocker**: Scheduled PTO / Out of Office |
-| **-4** | At or Above WIP Limit | **Hard Blocker**: $\text{ActiveWIP} \ge \text{max\_in\_progress}$ |
+| **-4** | At or Above WIP Limit | **Hard Blocker**: `ActiveWIP >= max_in_progress` |
 | **-3** | Exceeds Sprint Capacity | Exceeds `sprint_capacity_points` threshold |
 | **-3** | Outside Team Routing Map | Requires cross-team manager sign-off |
 | **-2** | Blocked Issue | Issue has unresolved upstream dependencies |
 | **-2** | Missing Acceptance Criteria | Incomplete user story definition |
 
 #### Confidence Tiers:
-* **HIGH**: Score $\ge 6$, zero hard blockers, within sprint capacity limits.
-* **MEDIUM**: Score between $3$ and $5$, or one soft risk.
-* **LOW**: Score $< 3$, or any active hard blocker (must stay recommendation).
+* **HIGH**: Score &ge; 6, zero hard blockers, within sprint capacity limits.
+* **MEDIUM**: Score between 3 and 5, or one soft risk.
+* **LOW**: Score &lt; 3, or any active hard blocker (must stay recommendation).
 
 ---
 
@@ -307,8 +307,8 @@ No pending ownership approvals required for this run.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Rohinth-S/codinzhub-sprint-guardian.git
-   cd codinzhub-sprint-guardian
+   git clone https://github.com/Rohinth-S/SprintHelm.git
+   cd SprintHelm
    ```
 
 2. **Create and activate a virtual environment:**
@@ -345,27 +345,27 @@ Add the server to your `claude_desktop_config.json` or IDE MCP configuration:
 ```json
 {
   "mcpServers": {
-    "sprint-guardian": {
+    "sprint-helm": {
       "command": "python",
       "args": ["-m", "sprint_guardian.mcp_server"],
-      "cwd": "/path/to/codinzhub-sprint-guardian"
+      "cwd": "/path/to/SprintHelm"
     }
   }
 }
 ```
 
 Now you can prompt your AI co-pilot:
-> *"Run Sprint Guardian to check our sprint health and balance overloaded developers."*
+> *"Run SprintHelm to check our sprint health and balance overloaded developers."*
 
 ---
 
 ### Option 3: Docker & Containerized Deployment
 
-Run Sprint Guardian in an isolated Docker container:
+Run SprintHelm in an isolated Docker container:
 
 ```bash
-docker build -t codinzhub-sprint-guardian .
-docker run --rm codinzhub-sprint-guardian --mode inspect-sprint
+docker build -t sprint-helm .
+docker run --rm sprint-helm --mode inspect-sprint
 ```
 
 Or execute via Docker Compose:
