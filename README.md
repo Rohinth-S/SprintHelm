@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
+[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![Model Context Protocol](https://img.shields.io/badge/MCP-Protocol%20v1.0-8A2BE2.svg)](https://modelcontextprotocol.io/)
 [![Atlassian Jira](https://img.shields.io/badge/Jira-Cloud%20REST%20%26%20JQL-0052CC.svg)](https://www.atlassian.com/software/jira)
 [![Test Suite](https://img.shields.io/badge/tests-31%2F31%20passing%20(100%25)-brightgreen.svg)](tests/)

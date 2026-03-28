@@ -10,7 +10,7 @@ authors = [
 ]
 description = "SprintHelm - AI-Powered Agile Sprint Orchestrator for Jira task triage, load balancing, and standups with Human-in-the-Loop guardrails."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
