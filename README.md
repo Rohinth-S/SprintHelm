@@ -12,7 +12,7 @@
 
 **An enterprise-grade, AI-powered Agile Sprint Orchestrator that automates Jira task triage, dynamic load balancing, risk detection, and agile ceremonies with secure, human-in-the-loop guardrails.**
 
-[Key Features](#-key-features) • [Architecture](#-system-architecture) • [Operational Modes](#-the-9-specialized-operational-modes) • [Scoring Algorithms](#-mathematical-scoring-specifications) • [Quickstart](#-quickstart--installation) • [Governance](#-approval-gated-governance--hitl) • [Resume & Defense](#-resume--interview-guide)
+[Key Features](#-key-features) • [Architecture](#-system-architecture) • [Operational Modes](#-the-9-specialized-operational-modes) • [Scoring Algorithms](#-mathematical-scoring-specifications) • [Quickstart](#-quickstart--installation) • [Governance](#-approval-gated-governance--hitl) • [License](#-license)
 
 </div>
 
@@ -549,21 +549,9 @@ SprintHelm/
 ├── setup.py                           # Setuptools packaging
 ├── requirements.txt                   # Production dependencies
 ├── requirements-dev.txt               # Testing and development dependencies
-├── RESUME.md                          # Forward Deployed Engineer (FDE) Resume Guide
 ├── SKILL.md                           # AI Agent Skill Definition Specification
 └── README.md                          # Comprehensive Documentation
 ```
-
----
-
-## 💼 Resume & Interview Guide
-
-Looking to feature this project on your resume for **Forward Deployed Engineer (FDE)**, **Founding AI Engineer**, or **AI Solutions Architect** roles?
-
-Check out [`RESUME.md`](RESUME.md) for:
-* **ATS-Optimized Resume Bullet Points** with quantified impact metrics (e.g. 34% rollover reduction, 12 hours saved weekly).
-* **STAR-Method Technical Interview Narratives** (Situation, Task, Action, Result).
-* **System Architecture Defense Questions** (e.g., Why MCP over REST? How to prevent LLM hallucination? Constrained WIP balancing).
 
 ---
 
