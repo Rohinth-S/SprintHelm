@@ -1,5 +1,4 @@
 # CodinzHub Sprint Guardian - Surface Risk Prompt
-*Created by **Coder Coder** | For more projects: [CodinzHub Projects](https://www.codinzhub.com/projects)*
 
 ---
 

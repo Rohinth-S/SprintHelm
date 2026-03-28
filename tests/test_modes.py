@@ -75,7 +75,7 @@ def test_suggest_owner_dry_run_vs_apply(config, mock_jira, gatekeeper, audit_log
         gatekeeper=gatekeeper,
         audit_logger=audit_logger,
         apply=True,
-        approved_by="Coder Coder",
+        approved_by="Rohinth S",
     )
     apply_out = apply_exec.execute(issue_keys="CodinzHub-108")
     assert "APPROVED: CodinzHub-108" in apply_out

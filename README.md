@@ -118,27 +118,27 @@ flowchart TD
 
 ## 🔄 Agile Sprint Lifecycle Workflow
 
-Sprint Guardian accompanies the engineering team through every stage of the 2-week Agile sprint:
+SprintHelm accompanies the engineering team through every stage of the 2-week Agile sprint:
 
 ```mermaid
 flowchart LR
     subgraph PreSprint["Phase 1: Sprint Planning & Backlog Refinement"]
         direction TB
-        M1["codinzhub-triage-queue\nClassify Backlog Tickets"] --> M2["codinzhub-shape-sprint\nCommit Story Points & Scope"]
-        M2 --> M3["codinzhub-suggest-owner\nMatch Best Assignees"]
+        M1["triage-queue\nClassify Backlog Tickets"] --> M2["shape-sprint\nCommit Story Points & Scope"]
+        M2 --> M3["suggest-owner\nMatch Best Assignees"]
     end
 
     subgraph ActiveSprint["Phase 2: Active Sprint Execution"]
         direction TB
-        M4["codinzhub-standup-brief\nDaily 09:00 AM Standup Brief"] --> M5["codinzhub-progress-pulse\n24h Delta Progress Tracking"]
-        M5 --> M6["codinzhub-inspect-sprint\nAudit Inactivity & Health"]
-        M6 --> M7["codinzhub-surface-risk\nPredict Delivery Threats"]
-        M7 --> M8["codinzhub-balance-load\nReallocate Overloaded WIP"]
+        M4["standup-brief\nDaily 09:00 AM Standup Brief"] --> M5["progress-pulse\n24h Delta Progress Tracking"]
+        M5 --> M6["inspect-sprint\nAudit Inactivity & Health"]
+        M6 --> M7["surface-risk\nPredict Delivery Threats"]
+        M7 --> M8["balance-load\nReallocate Overloaded WIP"]
     end
 
     subgraph CloseSprint["Phase 3: Sprint Closure & Review"]
         direction TB
-        M9["codinzhub-retro-notes\nAnalyze Rollover & Velocity"]
+        M9["retro-notes\nAnalyze Rollover & Velocity"]
     end
 
     PreSprint --> ActiveSprint --> CloseSprint
@@ -212,15 +212,15 @@ flowchart TD
 
 | Operational Mode | Primary Goal | JQL Query Scope | Algorithmic Logic | Mutation Capable? |
 | :--- | :--- | :--- | :--- | :---: |
-| `codinzhub-shape-sprint` | Plan sprint scope from backlog | `sprint is EMPTY AND statusCategory != Done` | Capacity tallying, dependency checking, readiness scoring | ✅ (Approval-Gated) |
-| `codinzhub-triage-queue` | Classify incoming work | `sprint is EMPTY ORDER BY priority DESC` | Multi-category classifier (Ready, Needs Info, Blocked, Candidate) | ✅ (Approval-Gated) |
-| `codinzhub-suggest-owner` | Recommend optimal assignee | `assignee is EMPTY AND statusCategory != Done` | Multi-criteria ownership scoring, confidence tiering | ✅ (Approval-Gated) |
-| `codinzhub-balance-load` | Reallocate overloaded tasks | `sprint in openSprints() AND statusCategory != Done` | Pareto WIP optimization, constrained bipartite transfer | ✅ (Approval-Gated) |
-| `codinzhub-inspect-sprint`| Audit sprint health & progress | `sprint in openSprints() ORDER BY Rank ASC` | Velocity burndown tracking, stale ticket detection (>3d) | ❌ (Report-Only) |
-| `codinzhub-surface-risk` | Predict delivery threats | `statusCategory != Done AND (assignee is EMPTY OR blocked)` | Critical path analyzer, unassigned high-priority detector | ❌ (Report-Only) |
-| `codinzhub-progress-pulse`| 24h task movement snapshot | `sprint in openSprints() AND updated >= -1d` | Delta state diffing against historical snapshots | ❌ (Report-Only) |
-| `codinzhub-standup-brief` | Daily standup compilation | `sprint in openSprints() ORDER BY updated DESC` | Synthesis: Done (24h), In-Flight, Blockers, Approvals | ❌ (Report-Only) |
-| `codinzhub-retro-notes` | Sprint retrospective report | `sprint in closedSprints()` | Planned vs delivered velocity, rollover analysis, retro prompts | ❌ (Report-Only) |
+| `shape-sprint` | Plan sprint scope from backlog | `sprint is EMPTY AND statusCategory != Done` | Capacity tallying, dependency checking, readiness scoring | ✅ (Approval-Gated) |
+| `triage-queue` | Classify incoming work | `sprint is EMPTY ORDER BY priority DESC` | Multi-category classifier (Ready, Needs Info, Blocked, Candidate) | ✅ (Approval-Gated) |
+| `suggest-owner` | Recommend optimal assignee | `assignee is EMPTY AND statusCategory != Done` | Multi-criteria ownership scoring, confidence tiering | ✅ (Approval-Gated) |
+| `balance-load` | Reallocate overloaded tasks | `sprint in openSprints() AND statusCategory != Done` | Pareto WIP optimization, constrained bipartite transfer | ✅ (Approval-Gated) |
+| `inspect-sprint`| Audit sprint health & progress | `sprint in openSprints() ORDER BY Rank ASC` | Velocity burndown tracking, stale ticket detection (>3d) | ❌ (Report-Only) |
+| `surface-risk` | Predict delivery threats | `statusCategory != Done AND (assignee is EMPTY OR blocked)` | Critical path analyzer, unassigned high-priority detector | ❌ (Report-Only) |
+| `progress-pulse`| 24h task movement snapshot | `sprint in openSprints() AND updated >= -1d` | Delta state diffing against historical snapshots | ❌ (Report-Only) |
+| `standup-brief` | Daily standup compilation | `sprint in openSprints() ORDER BY updated DESC` | Synthesis: Done (24h), In-Flight, Blockers, Approvals | ❌ (Report-Only) |
+| `retro-notes` | Sprint retrospective report | `sprint in closedSprints()` | Planned vs delivered velocity, rollover analysis, retro prompts | ❌ (Report-Only) |
 
 ---
 
@@ -261,9 +261,9 @@ $$\text{Score}(c, i) = \sum_{k=1}^{5} w_k \cdot \mathbf{1}_{\{P_k(c, i)\}} - \su
 
 ## 💻 Output Previews
 
-### Daily Standup Brief (`codinzhub-standup-brief`)
+### Daily Standup Brief (`standup-brief`)
 ```markdown
-# CodinzHub Sprint Guardian: Standup Brief
+# SprintHelm: Standup Brief
 
 ## 1. Summary
 Daily sprint standup brief generated for Sprint 24 - Core Pipeline. 1 completed, 5 in flight, 1 blocked, and 0 unassigned tickets.
@@ -276,17 +276,17 @@ Daily sprint standup brief generated for Sprint 24 - Core Pipeline. 1 completed,
 **Sprint**: Sprint 24 - Core Pipeline (ID: 4567)
 
 #### ✅ Completed (Last 24 Hours)
-- **CodinzHub-107**: Configure SOC-2 compliant cryptographic audit log format _(@coder.coder@codinzhub.com)_
+- **HELM-107**: Configure SOC-2 compliant cryptographic audit log format _(@lead.architect@company.com)_
 
 #### 🔄 In Flight (Active Development)
-- **CodinzHub-106** `[Testing]`: Implement sprint retrospective analytics and rollover detection _(@engineer.two@example.com)_
-- **CodinzHub-103** `[In Progress]`: Refactor tokenized Jira JQL query parser and optimizer _(@coder.coder@codinzhub.com)_
-- **CodinzHub-102** `[In Progress]`: Build dynamic Work-In-Progress (WIP) load rebalancer _(@coder.coder@codinzhub.com)_
-- **CodinzHub-101** `[In Progress]`: Implement Model Context Protocol (MCP) tool server for Atlassian Jira _(@coder.coder@codinzhub.com)_
-- **CodinzHub-105** `[In Progress]`: Automate daily standup brief synthesis with Slack markdown _(@engineer.one@example.com)_
+- **HELM-106** `[Testing]`: Implement sprint retrospective analytics and rollover detection _(@engineer.two@example.com)_
+- **HELM-103** `[In Progress]`: Refactor tokenized Jira JQL query parser and optimizer _(@lead.architect@company.com)_
+- **HELM-102** `[In Progress]`: Build dynamic Work-In-Progress (WIP) load rebalancer _(@lead.architect@company.com)_
+- **HELM-101** `[In Progress]`: Implement Model Context Protocol (MCP) tool server for Atlassian Jira _(@lead.architect@company.com)_
+- **HELM-105** `[In Progress]`: Automate daily standup brief synthesis with Slack markdown _(@engineer.one@example.com)_
 
 #### 🛑 Blockers & Impediments
-- 🔴 **CodinzHub-104**: Develop end-to-end integration test suite for load balancer (Blocker: `CodinzHub-101`) _(@engineer.two@example.com)_
+- 🔴 **HELM-104**: Develop end-to-end integration test suite for load balancer (Blocker: `HELM-101`) _(@engineer.two@example.com)_
 
 ## 3. Assignment Approval Items
 No pending ownership approvals required for this run.
@@ -296,7 +296,7 @@ No pending ownership approvals required for this run.
 - Schedule 10-minute swarm session immediately following standup to unblock critical tickets.
 
 ## 5. Missing Inputs or Risks
-- ⚠️ Standup Blocker on CodinzHub-104: Develop end-to-end integration test suite for load balancer
+- ⚠️ Standup Blocker on HELM-104: Develop end-to-end integration test suite for load balancer
 ```
 
 ---
@@ -460,7 +460,7 @@ tests/test_scoring.py::test_readiness_scoring PASSED                     [100%]
 ## 📂 Project Directory Structure
 
 ```text
-codinzhub-sprint-guardian/
+SprintHelm/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml                     # Automated multi-python CI testing
@@ -567,8 +567,8 @@ Check out [`RESUME.md`](RESUME.md) for:
 
 ---
 
-## 📄 License & Attribution
+## 📄 License
 
 This project is open-source and distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
-Developed with ❤️ by **[Rohinth S](https://github.com/Rohinth-S)** | Based on the **CodinzHub Advanced AI Projects Showcase**.
+Developed with ❤️ by **[Rohinth S](https://github.com/Rohinth-S)**.

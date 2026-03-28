@@ -1,7 +1,7 @@
 interface:
-  display_name: "CodinzHub Sprint Guardian"
-  short_description: "Guide CodinzHub sprint flow with approval gates"
-  default_prompt: "Use $codinzhub-sprint-guardian to shape CodinzHub sprint scope, triage queues, balance load, inspect sprint health, surface risks, create progress, standup, and retro summaries, and keep owner changes approval-gated."
+  display_name: "SprintHelm"
+  short_description: "Guide sprint flow with approval gates"
+  default_prompt: "Use $sprint-helm to shape sprint scope, triage queues, balance load, inspect sprint health, surface risks, create progress, standup, and retro summaries, and keep owner changes approval-gated."
 
 dependencies:
   tools:

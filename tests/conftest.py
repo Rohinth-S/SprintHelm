@@ -13,8 +13,8 @@ from sprint_guardian.models import JiraIssue, TeamMember
 @pytest.fixture
 def sample_team_member():
     return TeamMember(
-        name="Coder Coder",
-        jira_assignee="coder.coder@codinzhub.com",
+        name="Rohinth S",
+        jira_assignee="imt_2024068@iiitm.ac.in",
         team="CodinzHub",
         skills=["codinzhub", "lead", "automation"],
         components=["CodinzHub"],
@@ -33,7 +33,7 @@ def sample_issue():
         status="In Progress",
         status_category="In Progress",
         priority="Highest",
-        assignee="coder.coder@codinzhub.com",
+        assignee="imt_2024068@iiitm.ac.in",
         components=["CodinzHub"],
         labels=["codinzhub", "lead"],
         story_points=5,

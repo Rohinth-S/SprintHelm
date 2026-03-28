@@ -40,11 +40,11 @@ def test_approval_record_tsv_serialization():
         risk="None",
         authority_needed="Lead",
         status="APPROVED",
-        approved_by="Coder Coder",
+        approved_by="Rohinth S",
         applied=True,
     )
     tsv = rec.to_tsv()
     assert "status=completed" in tsv
-    assert "approved_by=Coder Coder" in tsv
+    assert "approved_by=Rohinth S" in tsv
     assert "issue_keys=CodinzHub-101" in tsv
     assert "target=new@example.com" in tsv

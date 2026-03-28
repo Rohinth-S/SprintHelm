@@ -21,7 +21,7 @@ def test_gatekeeper_verified_assignee_change(gatekeeper):
     verified = gatekeeper.verify_assignee_change(
         mode=OperationalMode.SUGGEST_OWNER,
         apply_flag=True,
-        approved_by="Coder Coder",
+        approved_by="Rohinth S",
         confidence=ConfidenceTier.HIGH,
         has_hard_blocker=False,
     )
@@ -41,7 +41,7 @@ def test_gatekeeper_verified_assignee_change(gatekeeper):
     low_conf = gatekeeper.verify_assignee_change(
         mode=OperationalMode.SUGGEST_OWNER,
         apply_flag=True,
-        approved_by="Coder Coder",
+        approved_by="Rohinth S",
         confidence=ConfidenceTier.LOW,
         has_hard_blocker=False,
     )
@@ -55,11 +55,11 @@ def test_audit_logger_records_entries(audit_logger, gatekeeper):
         proposed_owner="engineer.one@example.com",
         confidence=ConfidenceTier.HIGH,
         reason="Test approval",
-        approved_by="Coder Coder",
+        approved_by="Rohinth S",
     )
     audit_logger.log_approval(rec)
 
     assert audit_logger.log_path.exists()
     content = audit_logger.log_path.read_text(encoding="utf-8")
     assert "status=completed" in content
-    assert "approved_by=Coder Coder" in content
+    assert "approved_by=Rohinth S" in content

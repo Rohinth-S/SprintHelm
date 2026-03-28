@@ -108,12 +108,12 @@ def load_config(custom_path: Optional[str] = None) -> TeamMapConfig:
         "defaults": {"dry_run": True, "stale_after_days": 3},
         "approval": {
             "assignee_change_requires_approval": True,
-            "assigning_authorities": [{"name": "Coder Coder", "jira_assignee": "coder.coder@codinzhub.com"}]
+            "assigning_authorities": [{"name": "Rohinth S", "jira_assignee": "imt_2024068@iiitm.ac.in"}]
         },
         "team": [
             {
-                "name": "Coder Coder",
-                "jira_assignee": "coder.coder@codinzhub.com",
+                "name": "Rohinth S",
+                "jira_assignee": "imt_2024068@iiitm.ac.in",
                 "skills": ["codinzhub", "lead", "automation"],
                 "components": ["CodinzHub"],
                 "max_in_progress": 3,

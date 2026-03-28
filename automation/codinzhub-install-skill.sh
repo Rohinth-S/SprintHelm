@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Developed by Coder Coder | Find more projects: https://www.codinzhub.com/projects
 
 set -euo pipefail
 

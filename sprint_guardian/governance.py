@@ -76,7 +76,7 @@ class ApprovalGatekeeper:
             confidence=confidence,
             reason=reason,
             risk=risk,
-            authority_needed="Configured Assigning Authority (e.g. Coder Coder)",
+            authority_needed="Configured Assigning Authority (e.g. Lead)",
             status="PENDING APPROVAL",
             applied=False,
         )

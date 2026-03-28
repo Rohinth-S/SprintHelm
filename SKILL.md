@@ -1,12 +1,11 @@
 ---
-name: codinzhub-sprint-guardian
+name: sprint-helm
 description: |
   Agile sprint coordination with queue triage, workload balancing, sprint assignment, progress tracking, and risk analysis.
   Use when: shaping sprint scope, balancing team load, recommending sprint assignees, analyzing sprint health, or preparing daily standup briefs.
 metadata:
-  author: Coder Coder
+  author: Rohinth S
   version: "1.0.0"
-  projects_url: "https://www.codinzhub.com/projects"
 ---
 
 # CodinzHub Sprint Guardian
@@ -128,5 +127,4 @@ To configure, validate, and execute this skill:
 
 ---
 
-*Created by **Coder Coder** | For more projects: [CodinzHub Projects](https://www.codinzhub.com/projects)*
-*Created for CodinzHub sprint team lead task execution*
+*Created by **Rohinth S** | SprintHelm Intelligent Sprint Orchestration*
